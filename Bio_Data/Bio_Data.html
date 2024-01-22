@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            transition: 1s;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(23, 29, 35);
+            overflow: hidden;
+        }
+        .card{
+            position: relative;
+            width: 320px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            animation: get-in 1s ease-out;
+        }
+        @keyframes get-in {
+            0%{
+                left: -100%;
+            }
+            100%{
+                left: 0;
+            }
+        }
+        .card:hover .imgbx::before, .card:hover .imgbx::after,
+        .card:hover .content .King::before, .card:hover .content .King::after, 
+        .card:hover .content .King span, .card:hover .content .King,
+        .card:hover .content .desc,.card:hover .content .desc p{
+            height: 0;
+            width: 0;
+            bottom: 0;
+            overflow: hidden;
+            left: -20px;
+        }
+        .card:hover{
+            height: 510px;
+        }
+        .card:hover .imgbx{
+            height: 510px;
+        }
+        .card:hover .content,.card:hover .content .King,.card:hover .content .King span{
+            content: "";
+            height: 0;
+        }
+        .card .imgbx{
+            position: relative;
+            height: 240px;
+            width: 100%;
+            background-color: aqua;
+            border-radius: 15px;
+             background: url('prince.JPG'); 
+            background-size: cover;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .card .imgbx img{
+            width: 320px;
+        }
+
+        .card .imgbx::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: -10px 10px 0 rgb(23, 29, 35);
+            z-index: 10;
+        }
+
+        .card .imgbx::after{
+            content: "";
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: -10px 10px 0 rgb(23, 29, 35);
+            z-index: 10;
+        }
+
+        .card .content{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            background-color: rgb(44, 54, 71);
+            border-radius: 15px;
+            border-top-left-radius: 0;
+        }
+
+        .card .content .King{
+            position: absolute;
+            top: -80px;
+            height: 80px;
+            width: 50%;
+            background-color: rgb(44, 54, 71);
+            border-top: 10px solid rgb(23, 29, 35);
+            border-right: 10px solid rgb(23, 29, 35);
+            border-top-right-radius: 25px;
+            z-index: 10;
+        }
+        .card .content .King::before{
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;
+            background-color: transparent;
+            box-shadow: -10px -10px 0 rgb(23, 29, 35);
+            z-index: 10;
+        }
+        .card .content .King::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -25px;
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;
+            background-color: transparent;
+            box-shadow: -10px 10px 0 rgb(44, 54, 71);
+            z-index: 10;
+        }
+
+        .card .content .King span{
+            height: 70%;
+            width: 80%;
+            background-color: rgb(23, 29, 35);
+            font-size: 15px;
+            color: aliceblue;
+            font-family: tahoma;
+            padding: 15px;
+            margin: 15px;
+            position: relative;
+            display: block;
+            border-radius: 15px;
+            z-index: 10;
+        }
+        .card .content .desc{
+            display: block;
+            margin: 20px;
+            padding: 20px;
+            font-family: tahoma;
+            height: 80%;
+            width: 80%;
+            color: aliceblue;
+        }
+        .card .content .desc p span{
+            font-size: x-large;
+            padding: 5px;
+            font-weight: 1000;
+            font-size: 23px;
+            font-family: vivaldi;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="imgbx">
+            <img src="">
+        </div>
+        <div class="content">
+            <span class="King">
+                <span>King Of Earth</span>
+            </span>
+            <span class="desc">
+                <p>
+                    <span>Prince Rupavatiya</span><br><br>
+                    Date of birth : 26/06/2004<br>
+                    Msc CS Batch1
+                </p>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
