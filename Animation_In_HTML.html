@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(75deg,rgb(51, 64, 76),rgb(65, 103, 140),rgb(200, 229, 255));
+            height: 100vh;
+            width: 100vw;
+        }
+        .glass-1,.glass-2,.img{
+            height: 40vh;
+            width: 40vw;
+			background-color: rgba(240, 248, 255, 0.1);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            border-radius: 20px;
+            animation: slide-glide 10s linear infinite;
+            box-shadow: -5vh 5vw 100px rgba(0, 0, 0, 0.4);
+        }
+        .glass-1,.glass-2{
+            border-top: 1px solid rgba(240, 248, 255, 0.3);
+            border-left: 1px solid rgba(240, 248, 255, 0.3);
+        }
+        .glass-1{
+            top: 20%;
+            left: 40%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color:black;
+            font-size: x-large;
+        }
+        .glass-2{
+            top: 30%;
+            left: 35%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color:black;
+            font-size: 100px;
+        }
+        .img{
+            top: 40%;
+            left: 30%;
+        }
+
+        @keyframes slide-glide {
+            0%{
+                transform: 0;
+                box-shadow: -5vh 5vw 100px rgba(0, 0, 0, 0.4);
+            }
+            25%{
+                transform: rotateX(10deg) rotateY(20deg) rotateZ(-10deg) skewX(10deg);
+                box-shadow: -1vh 1vw 100px rgba(0, 0, 0, 0.4);
+            }
+            50%{
+                transform: rotateX(90deg) rotateY(80deg) rotateZ(-90deg) skewX(70deg);
+                box-shadow: none;
+            }
+            75%{ 
+                transform: rotateX(10deg) rotateY(20deg) rotateZ(-10deg) skewX(10deg);
+                box-shadow: -1vh 1vw 100px rgba(0, 0, 0, 0.4);
+            }
+            100%{
+                transform: 0;
+                box-shadow: -5vh 5vw 100px rgba(0, 0, 0, 0.4);
+            }
+		}
+			
+	</style>
+</head>
+<body>
+    <img src="Image.jpg" class="img" alt="">
+    <div class="glass-2">Prince</div>
+    <div class="glass-1">Rupavatiya Prince Sureshbhai</div>
+</body>
+</html>	
